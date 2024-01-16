@@ -1,0 +1,59 @@
+SQL CODE
+
+
+-- Create the banktrans table
+CREATE TABLE banktrans (
+    TransID NUMBER NOT NULL PRIMARY KEY,
+    AcctNo NUMBER,
+    OldBBal DOUBLE(9,2),
+    NewBal DOUBLE(9,2),
+    TransType VARCHAR(10),
+    TransAmt DOUBLE(5),
+    TransStat VARCHAR(10)
+);
+CREATE  SEQUENCE Trans_Seq
+START WITH 1000
+INCREMENT BY 1
+CACHE 100;
+
+-- Sample data for banktrans table
+INSERT INTO banktrans VALUES(Trans_Seq.nextval,5005,10000,'W',5000);
+INSERT INTO banktrans VALUES(TransID,AcctNo,OldBal,TransType,NewBal,TransStat,1001,1234,5776,'W',2345,8121);
+INSERT INTO banktrans VALUES(TransID,AcctNo,OldBal,TransType,NewBal,TransStat,4101,2344,34546,'D',23405,11141);
+INSERT INTO banktrans VALUES(TransID,AcctNo,OldBal,TransType,NewBal,TransStat,2001,834,57676,'D',5000,52676);
+INSERT INTO banktrans VALUES(TransID,AcctNo,OldBal,TransType,NewBal,TransStat,9002,6879,13456,'W',9005,22461);
+INSERT INTO banktrans VALUES(TransID,AcctNo,OldBal,TransType,NewBal,TransStat,5445,3535,6876,'D',5463,1413);
+INSERT INTO banktrans VALUES(TransID,AcctNo,OldBal,TransType,NewBal,TransStat,3005,6545,9834,'D',8967,867);
+INSERT INTO banktrans VALUES(TransID,AcctNo,OldBal,TransType,NewBal,TransStat,6005,4455,4596,'W',7568,12164);
+INSERT INTO banktrans VALUES(TransID,AcctNo,OldBal,TransType,NewBal,TransStat,7005,5656,2549,'D',4326,6875);
+INSERT INTO banktrans VALUES(TransID,AcctNo,OldBal,TransType,NewBal,TransStat,1009,2669,54586,'D',2965,51621);
+INSERT INTO banktrans VALUES(TransID,AcctNo,OldBal,TransType,NewBal,TransStat,3004,9999,44999,'W',23698,68697);
+
+-- Create ValidTrans table
+CREATE TABLE ValidTrans (
+    TransID INT PRIMARY KEY,
+    AcctNo INT,
+    OldBal DOUBLE,
+    NewBal DOUBLE,
+    TransType VARCHAR(10),
+    TransAmt DOUBLE,
+    TransStat VARCHAR(10)
+);
+
+-- Create InvalidTrans table
+CREATE TABLE InvalidTrans (
+    TransID INT PRIMARY KEY,
+    AcctNo INT,
+    OldBal DOUBLE,
+    NewBal DOUBLE,
+    TransType VARCHAR(10),
+    TransaTmt DOUBLE,
+    TransStat VARCHAR(10)
+);
+
+
+
+
+
+
+.
